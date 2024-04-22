@@ -1,0 +1,65 @@
+Project Name: INSTAHYRE ASSIGNMENT
+
+Overview:
+This project aims to replicate the functionality of Truecaller, providing features for user registration, login, and additional functionalities related to managing user contacts and spam detection.
+
+Features and Functionalities:
+1. REGISTER USER
+    - API Endpoint: 127.0.0.1:8000/register/
+    - Body: {
+        "user_name": "",
+        "number": "",
+        "email": "",
+        "password": ""
+      }
+    - Use Case: Registers users into the Registered database. Exception handling implemented to ensure smooth functioning.
+
+2. LOGIN USER 
+    - API Endpoint: 127.0.0.1:8000/login/
+    - Body: {
+        "user_name": "",    // user_name is the phone number here
+        "password": ""
+      }
+    - Use Case: Allows users to log in securely using JWT tokens. Upon successful login, an access token is provided for API authentication.
+
+3. POPULATE USER CONTACT
+    - API Endpoint: 127.0.0.1:8000/contact/
+    - Body: {
+        "name": "",
+        "number": "",
+        "email": ""
+      }
+    - Use Case: Registers users into the contact database. Access token authentication required. Exception handling implemented.
+
+4. CREATE GLOBAL USER
+    - API Endpoint: 127.0.0.1:8000/global_user/
+    - Body: {
+        "name": "",
+        "number": "",
+        "email": "",
+        "spam_likelihood": 
+      }
+    - Use Case: Registers users into the global database. Access token authentication required. Exception handling implemented.
+
+5. SPAM MARKER
+    - API Endpoint: 127.0.0.1:8000/spam_marker/
+    - Body: {
+        "number": "",
+        "spam_likelihood": ""  
+      }
+    - Use Case: Updates a number's spam likelihood status. Access token authentication required. Exception handling implemented.
+
+6. SEARCH BY NUMBER
+    - API Endpoint: 127.0.0.1:8000/search/?number=
+    - Use Case: Searches data for a particular number. Access token authentication required. Exception handling implemented.
+
+7. SEARCH BY NAME
+    - API Endpoint: 127.0.0.1:8000/search/?name=
+    - Use Case: Searches data for a particular name. Access token authentication required. Exception handling implemented.
+
+Technologies Used:
+- Django
+- Django REST Framework
+- JWT (JSON Web Tokens)
+
+
